@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Form</title>
+    <link rel="stylesheet"  type="text/css" href="style.css" />
+</head>
+<body>
+   <div class="container">
+     <form onsubmit="sendEmail(); reset();  return false;">
+      <h3>GET IN TOUCH</h3>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Email id" required>
+      <input type="text" id="phone" placeholder="phone No" required>
+      <input type="text" id="company" placeholder="Company Name" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <textarea id="message" rows="4" placeholder="How can We Help you?"></textarea>
+      <button type="submit">Send</button>
+      <input type="reset"  value="Reset">
+    
+    </form>
+   </div>
+  <script>src="https://smtpjs.com/v3/smtp.js"</script>
+  <script>
+    function  sendEmail(){
+      Email.send({
+    Host : "smtp.gmail.com",
+    Username : "mdfaisal8297@gmail.com",
+    Password : "8297647973",
+    To : 'mdfaisal7861@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Contact Form Enquiry",
+    Body : "Name" + document.getElementById("name").value
+    + "<br> Email: " + document.getElementById("email").value
+    + "<br> phone No : " + document.getElementById(" phone").value
+    + "<br> Company Name: " + document.getElementById("Company Name").value
+    + "<br> Address: " + document.getElementById("address").value
+    + "<br> Message: " + document.getElementById("message").value
+    
+    
+}).then(
+  message => alert("Message Sent Succesfully")
+);
+    }
+  </script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/63495a9a37898912e96ea161/1gfb8jrag';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+  <input type="reset">
+</body>
+</html>
